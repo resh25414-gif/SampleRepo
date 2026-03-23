@@ -1,5 +1,6 @@
+package superKeyword;
 
-public class SuperMethodChild extends SuperMethodParent {
+public class SuperMethodChild extends SuperMethodParent{
 	public void print()
 	{
 		System.out.println("Child method");
