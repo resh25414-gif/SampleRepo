@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-10T01:03:13 IST" name="Suite" finished-at="2026-07-10T01:03:26 IST" duration-ms="12581">
+  <suite started-at="2026-07-15T12:23:50 IST" name="Suite" finished-at="2026-07-15T12:24:13 IST" duration-ms="22219">
     <groups>
     </groups>
-    <test started-at="2026-07-10T01:03:13 IST" name="Test" finished-at="2026-07-10T01:03:26 IST" duration-ms="12581">
-      <class name="testscript.LogoutTest">
-        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:testscript.LogoutTest@73a1e9a9]" started-at="2026-07-10T01:03:13 IST" name="initilizeBrowser" finished-at="2026-07-10T01:03:22 IST" duration-ms="8519" status="PASS">
+    <test started-at="2026-07-15T12:23:50 IST" name="Test" finished-at="2026-07-15T12:24:13 IST" duration-ms="22219">
+      <class name="testscript.ManageNewsTest">
+        <test-method is-config="true" signature="initilizeBrowser(java.lang.String)[pri:0, instance:testscript.ManageNewsTest@14bdbc74]" started-at="2026-07-15T12:23:51 IST" name="initilizeBrowser" finished-at="2026-07-15T12:24:05 IST" duration-ms="14624" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initilizeBrowser -->
-        <test-method signature="verifyWhetherTheUserIsAbleToLogout()[pri:0, instance:testscript.LogoutTest@73a1e9a9]" started-at="2026-07-10T01:03:22 IST" name="verifyWhetherTheUserIsAbleToLogout" finished-at="2026-07-10T01:03:26 IST" duration-ms="3978" status="PASS">
+        <test-method signature="verifyUserIsAbleToEnterNewNews()[pri:0, instance:testscript.ManageNewsTest@14bdbc74]" started-at="2026-07-15T12:24:05 IST" name="verifyUserIsAbleToEnterNewNews" finished-at="2026-07-15T12:24:13 IST" duration-ms="7422" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyWhetherTheUserIsAbleToLogout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testscript.LogoutTest@73a1e9a9]" started-at="2026-07-10T01:03:26 IST" name="closeBrowser" finished-at="2026-07-10T01:03:26 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- verifyUserIsAbleToEnterNewNews -->
+        <test-method is-config="true" signature="browserQuit(org.testng.ITestResult)[pri:0, instance:testscript.ManageNewsTest@14bdbc74]" started-at="2026-07-15T12:24:13 IST" name="browserQuit" finished-at="2026-07-15T12:24:13 IST" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyUserIsAbleToEnterNewNews status=SUCCESS method=ManageNewsTest.verifyUserIsAbleToEnterNewNews()[pri:0, instance:testscript.ManageNewsTest@14bdbc74] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- testscript.LogoutTest -->
+        </test-method> <!-- browserQuit -->
+      </class> <!-- testscript.ManageNewsTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
