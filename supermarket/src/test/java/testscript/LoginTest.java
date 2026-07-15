@@ -8,7 +8,7 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base{
-	@Test(retryAnalyzer=retry.Retry.class,groups= {"Regression"})
+	@Test(retryAnalyzer=retry.Retry.class,groups= {"Regression"}, description="Testcase used to check user is able to login with valid username and password")
 	public void verifyUserIsAbleToLoginUsingValidCredentials() throws IOException
 	{
 	String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");
@@ -19,7 +19,7 @@ public class LoginTest extends Base{
 	loginpage.enterPassword(passwordvalue);
 	 loginpage.login();
 	}
-	@Test
+	@Test(description="Testcase used to check user is able to login with valid username and invalid password")
 	public void verifyUserIsAbleToLoginWithIncorrectPassword() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(2, 0, "loginpage");
@@ -30,7 +30,7 @@ public class LoginTest extends Base{
 		loginpage.enterPassword(passwordvalue);
 		 loginpage.login();
 	}
-	@Test
+	@Test(description="Testcase used to check user is able to login with invalid username and valid password")
 	public void verifyUserIsAbleToLoginWithIncorrectUsername() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(3, 0, "loginpage");
@@ -41,7 +41,7 @@ public class LoginTest extends Base{
 		loginpage.enterPassword(passwordvalue);
 		 loginpage.login();
 	}
-	@Test
+	@Test(description="Testcase used to check user is able to login with invalid username and password")
 	public void verifyUserIsAbleToLoginWithInValidCredentials() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(4, 0, "loginpage");

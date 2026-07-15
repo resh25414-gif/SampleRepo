@@ -11,7 +11,7 @@ import pages.MobileSliderPage;
 import utilities.ExcelUtility;
 
 public class MobileSliderTest extends Base{
-	@Test
+	@Test(description="Testcase used to check user is able to add new slider")
 	public void UserIsAbleToCreateNewMobileSlider() throws IOException
 	{
 	String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");

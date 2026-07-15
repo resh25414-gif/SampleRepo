@@ -10,7 +10,7 @@ import utilities.ExcelUtility;
 
 public class LogoutTest extends Base{
 
-	@Test
+	@Test(description="Testcase used to check user is able to logout after login with valid username and password")
 	public void verifyWhetherTheUserIsAbleToLogout() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");

@@ -12,7 +12,7 @@ import utilities.FakerUtility;
 
 public class CategoryTest extends Base{
 
-	@Test
+	@Test(description="Testcase used to check user is able to add new category")
 	public void userIsAbleToAddNewCategory() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");

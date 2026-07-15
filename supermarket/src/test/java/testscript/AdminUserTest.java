@@ -10,7 +10,7 @@ import utilities.ExcelUtility;
 
 public class AdminUserTest extends Base {
 	
-	@Test
+	@Test(description="Testcase used to check user is able to add new user details")
 	public void verifyUserIsAbleCreateNewUserProfile() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");

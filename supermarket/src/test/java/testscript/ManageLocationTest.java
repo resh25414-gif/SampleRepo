@@ -10,7 +10,7 @@ import utilities.ExcelUtility;
 
 public class ManageLocationTest extends Base {
 
-	@Test
+	@Test(description="Testcase used to check user is able to add new location")
 	public void userIsAbleToAddNewLocation() throws IOException
 	{
 		String usernamevalue=ExcelUtility.getStringData(1, 0, "loginpage");
