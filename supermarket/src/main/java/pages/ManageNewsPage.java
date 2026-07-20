@@ -11,7 +11,7 @@ import utilities.PageUtility;
 public class ManageNewsPage {
 	public WebDriver driver;
 	
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']") WebElement managenews;
+	//@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news' and @class='small-box-footer']") WebElement managenewsmoreinfo;
 	@FindBy(xpath="//a[@onclick='click_button(1)']") WebElement newnews;
 	@FindBy(xpath="//textarea[@id='news']") WebElement news;
 	@FindBy(xpath="//button[@type='submit']") WebElement save;
@@ -21,23 +21,26 @@ public ManageNewsPage(WebDriver driver) {
 	this.driver=driver;
 	PageFactory.initElements(driver, this);
 }
-public void clickOnManageNews()
+/*public void clickOnManageNews()
 {
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	js.executeScript("window.scrollBy(0,1000)","");
-	managenews.click();
-}
-public void clickOnNew()
+	managenewsmoreinfo.click();
+}*/
+public ManageNewsPage clickOnNew()
 {
 	newnews.click();
+	return this;
 }
-public void enterNews(String newsvalue)
+public ManageNewsPage enterNews(String newsvalue)
 {
 	news.sendKeys(newsvalue);
+	return this;
 }
-public void saveNews()
+public ManageNewsPage saveNews()
 {
 	save.click();
+	return this;
 }
 public boolean isAlertDisplayed()
 {

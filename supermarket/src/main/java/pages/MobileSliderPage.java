@@ -10,7 +10,7 @@ import utilities.PageUtility;
 
 public class MobileSliderPage {
 	public WebDriver driver;
-@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-mobileslider' and @class='small-box-footer']") WebElement mobileslider;
+//@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-mobileslider' and @class='small-box-footer']") WebElement mobileslidermoreinfo;
 @FindBy(xpath="//a[@onclick='click_button(1)']") WebElement newslider;
 @FindBy(xpath="//select[@id=\"cat_id\"]") WebElement selectcategory;
 @FindBy(xpath="//input[@id='main_img']")WebElement choosefile;
@@ -24,26 +24,30 @@ public MobileSliderPage(WebDriver driver) {
 	this.driver=driver;
 	PageFactory.initElements(driver, this);
 	}
-public void openMobileSlider()
+/*public void openMobileSlider()
 {
-	mobileslider.click();
+	mobileslidermoreinfo.click();
 	
-}
-public void selectNewSlider()
+}*/
+public MobileSliderPage selectNewSlider()
 {
 	newslider.click();
+	return this;
 }
-public void selectCategoryFromDropdown(String categoryvalue)
+public MobileSliderPage selectCategoryFromDropdown(String categoryvalue)
 {
 	pageutility.dropDownVisibleText(selectcategory, categoryvalue);
+	return this;
 }
-public void chooseFileToUpload(String testimg)
+public MobileSliderPage chooseFileToUpload(String testimg)
 {
 	fileupload.fileUploadUsingSendKeys(choosefile, testimg);
+	return this;
 }
-public void saveDetails()
+public MobileSliderPage saveDetails()
 {
 	save.click();
+	return this;
 }
 public boolean isAlertDisplayed()
 {

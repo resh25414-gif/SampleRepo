@@ -2,15 +2,19 @@ package testscript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import constants.Constant;
 import pages.CategoryPage;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
 
 public class CategoryTest extends Base{
+	HomePage homepage;
+	CategoryPage categorypage;
 
 	@Test(description="Testcase used to check user is able to add new category")
 	public void userIsAbleToAddNewCategory() throws IOException
@@ -19,21 +23,23 @@ public class CategoryTest extends Base{
 		String passwordvalue=ExcelUtility.getStringData(1, 1, "loginpage");
 		LoginPage loginpage=new LoginPage(driver);
 		
-		loginpage.enterUserName(usernamevalue);
-		loginpage.enterPassword(passwordvalue);
-		loginpage.login();
+		loginpage.enterUserName(usernamevalue).enterPassword(passwordvalue);
+		//loginpage.enterPassword(passwordvalue);
+		homepage=loginpage.login();
 		 
 		 
 		 FakerUtility faker=new FakerUtility();
 		 String categoryvalue=faker.generateCategory();
-		 CategoryPage categorypage=new CategoryPage(driver);
+		// CategoryPage categorypage=new CategoryPage(driver);
 		 
-		 categorypage.openCategory();
-		 categorypage.clickOnNew();
-		 categorypage.enterCategoryDetails(categoryvalue);
+		 categorypage=homepage.openCategoryMoreInfo();
+		 categorypage.clickOnNew().enterCategoryDetails(categoryvalue).selectGroupFromMenu().chooseFile(Constant.TESTIMAGE).saveCategory();
+		/* categorypage.enterCategoryDetails(categoryvalue);
 		 categorypage.selectGroupFromMenu();
 		 categorypage.chooseFile(Constant.TESTIMAGE);
-		 categorypage.saveCategory();
+		 categorypage.saveCategory();*/
+		 boolean alertmessage=categorypage.isAlertDisplayed();
+	     Assert.assertTrue(alertmessage);
 		 
 	}
 }

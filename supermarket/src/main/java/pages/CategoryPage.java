@@ -12,12 +12,13 @@ import utilities.PageUtility;
 public class CategoryPage {
 	public WebDriver driver;
 	
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category' and @class='small-box-footer']") WebElement category;
+	//@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category' and @class='small-box-footer']") WebElement categorymoreinfo;
 	@FindBy(xpath="//a[@onclick='click_button(1)']") WebElement addnew;
 	@FindBy(xpath="//input[@id='category']") WebElement entercategory;
 	@FindBy(xpath="//span[text()='Goodness']") WebElement selectgroup;
 	@FindBy(xpath="//input[@id='main_img']") WebElement choosefile;
 	@FindBy(xpath="//button[@type='submit']") WebElement save;
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement successalert;
 	
 	FileUploadUtility fileupload=new FileUploadUtility();
     PageUtility page=new PageUtility();
@@ -26,35 +27,42 @@ public class CategoryPage {
 	public CategoryPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
-
-
 	}
-	public void openCategory()
+	/*public void openCategory()
 	{
-		category.click();
-	}
-	public void clickOnNew()
+		categorymoreinfo.click();
+	}*/
+	public CategoryPage clickOnNew()
 	{
 		addnew.click();
+		return this;
 	}
-	public void enterCategoryDetails(String categoryvalue)
+	public CategoryPage enterCategoryDetails(String categoryvalue)
 	{
 		entercategory.sendKeys(categoryvalue);
+		return this;
 	}
-	public void selectGroupFromMenu()
+	public CategoryPage selectGroupFromMenu()
 	{
 
 		selectgroup.click();
+		return this;
 
 	}
-	public void chooseFile(String testimage)
+	public CategoryPage chooseFile(String testimage)
 	{
 	fileupload.fileUploadUsingSendKeys(choosefile, testimage);
+	return this;
 	}
-	public void saveCategory()
+	public CategoryPage saveCategory()
 	{
 		//save.click();
 		page.click(save, driver);
+		return this;
+	}
+	public boolean isAlertDisplayed()
+	{
+		return successalert.isDisplayed();
 	}
 
 

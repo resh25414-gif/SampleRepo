@@ -15,7 +15,7 @@
       <class name="testscript.AdminUserTest"/>
       <class name="testscript.CategoryTest"/>-->
       <class name="testscript.LoginTest"/>
-      <class name="testscript.LogoutTest"/>
+      <class name="testscript.HomePageTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
