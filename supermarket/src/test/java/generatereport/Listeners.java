@@ -1,4 +1,5 @@
-package generatereport;
+
+	package generatereport;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
