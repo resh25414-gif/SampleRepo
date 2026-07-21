@@ -62,8 +62,9 @@ public void browserQuit(ITestResult iTestResult) throws IOException {
 	if (iTestResult.getStatus() == ITestResult.FAILURE) {
 		ScreenshotUtility scrShot = new ScreenshotUtility(); // creating obj
 		scrShot.getScreenShot(driver, iTestResult.getName());
-	driver.quit();
 	}
+	driver.quit();
+
 /*public void closeBrowser()
 {
 	//driver.close(); //closing current tab
